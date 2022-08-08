@@ -1,0 +1,20 @@
+#below is the code needed to convert a 1x1 pandas dataframe containing the SIC codes to their respective FF industry codes.
+Code and CSV file obtained from Ekaterina Volkova (https://volkovanotes.wordpress.com/2017/08/16/sic-code-match-to-fama-french-industries/).
+Please refer to the link below for more information on 
+
+def sic_to_ff(a):
+    #import pandas package
+    import pandas as pd
+    #load pandas dataframe 
+    data = pd.read_csv(r"C:\Users\tmilo\OneDrive - McGill University\Documents\Summer 2022\XBRL project\institutional_holdings\arc_merged.csv")
+    data=data.dropna()
+    sic_codes=pd.DataFrame(data["sic"])
+
+    sic_codes["sic"]
+
+    ff_codes["SIC"].iloc[1]
+
+
+    ff_codes=pd.read_csv(r"C:\Users\tmilo\OneDrive - McGill University\Documents\Summer 2022\XBRL project\institutional_holdings\SIC_to_Fama_French_industry.csv")
+    results = pd.merge(sic_codes,ff_codes[["SIC","FF_12"]],left_on="sic",right_on="SIC",how="left")
+    return results
