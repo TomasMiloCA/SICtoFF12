@@ -8,4 +8,5 @@ def sic_to_ff(a,b):
     sic_codes=data.dropna()
     ff_codes=pd.read_csv(b)
     results = pd.merge(sic_codes,ff_codes[["SIC","FF_12"]],left_on="sic",right_on="SIC",how="left")
+    results.pop("SIC")
     return results
