@@ -1,16 +1,11 @@
-def sic_to_ff(a):
+#make you know the path for where you have saved the SIC_to_Fama_French_Industry.csv
+
+def sic_to_ff(a,b):
     #import pandas package
     import pandas as pd
-    #load pandas dataframe 
-    data = pd.read_csv(r"C:\Users\tmilo\OneDrive - McGill University\Documents\Summer 2022\XBRL project\institutional_holdings\arc_merged.csv")
-    data=data.dropna()
-    sic_codes=pd.DataFrame(data["sic"])
-
-    sic_codes["sic"]
-
-    ff_codes["SIC"].iloc[1]
-
-
-    ff_codes=pd.read_csv(r"C:\Users\tmilo\OneDrive - McGill University\Documents\Summer 2022\XBRL project\institutional_holdings\SIC_to_Fama_French_industry.csv")
+    #load data - make sure that the data has a column called "sic" which includes the SIC codes
+    sic_codes = a
+    sic_codes=data.dropna()
+    ff_codes=pd.read_csv(b)
     results = pd.merge(sic_codes,ff_codes[["SIC","FF_12"]],left_on="sic",right_on="SIC",how="left")
     return results
