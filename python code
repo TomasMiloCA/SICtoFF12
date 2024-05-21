@@ -1,4 +1,4 @@
-#make you know the path for where you have saved the SIC_to_Fama_French_Industry.csv
+#make sure you know the path for where you have saved the SIC_to_Fama_French_Industry.csv
 
 #a = the dataframe with the sic codes
 #b = the path where you saved the .csv file
